@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <title>NIVAS NETHA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main_animation.js"></script>
+</head>
+
+<body class="futuristic-mode">
+    <div id="animations">
+        <div id="loading-overlay" style="display: none;">
+            <h2 class="journey-text">Ready for the Journey</h2>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+                <p class="loading-text">Initializing Transfer Protocol...</p>
+            </div>
+        </div>
+
+        <div id="main_body" class="body_class">
+            <img src="/image.jpg" alt="Profile pic">
+            <h1 style="font-family: 'Roboto', sans-serif; font-style: initial;">NIVAS NETHA</h1>
+            <h2 class="desc" style="font-weight: 10; font-size: 20px;">
+                I'm a
+                <span class="text-switcher" style="font-style: initial; font-size: 22px;" data-hold-time="1000" data-switch-content='[ "Android App Developer.", "Embedded Developer","ML-AI NLP Enthusiast."]'></span>
+            </h2>
+            
+
+        </div>
+
+    </div>
+    <script>
+(function() {
+    let redirected = false;
+
+    function startTransition() {
+        if (redirected) return;
+        redirected = true;
+
+        const overlay = document.getElementById('loading-overlay');
+        const main = document.getElementById('main_body');
+
+        overlay.style.display = 'flex';
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+        });
+
+        main.classList.add('slide-out');
+
+        setTimeout(() => {
+            window.location.href = 'contact.html';
+        }, 1400); // Match animation timing
+    }
+
+    window.addEventListener('wheel', startTransition, { passive: true });
+    window.addEventListener('touchmove', startTransition, { passive: true });
+    window.addEventListener('keydown', function(e) {
+        if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', ' '].includes(e.key)) {
+            startTransition();
+        }
+    });
+})();
+</script>
+
+</script>
+
+</body>
+
+</html>
